@@ -1,0 +1,26 @@
+.ai-image-wrapper {
+    position: relative;
+    display: inline-block;
+    line-height: 0;
+}
+
+.ai-image-wrapper img {
+    display: block;
+}
+
+.ai-badge {
+    position: absolute;
+    top: 8px;
+    left: 8px;
+    background-color: rgba(0, 0, 0, 0.67); /* Schwarz, 33% transparent */
+    color: #ffffff;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    font-size: 11px;
+    font-weight: 600;
+    line-height: 1;
+    padding: 4px 8px;
+    border-radius: 4px;
+    pointer-events: none;
+    z-index: 10;
+    letter-spacing: 0.3px;
+}
