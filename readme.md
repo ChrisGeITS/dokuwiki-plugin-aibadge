@@ -31,7 +31,15 @@ Supported languages out of the box:
 
 ## Screenshots
 
-![AI Badge Example](screenshots/example.png)
+<img src="screenshots/example.png" alt="AI Badge Example" width="300">
+
+---
+
+## Example Deployment
+
+An example of this plugin in use can be found at:
+
+- https://paedagogik.wiki
 
 ---
 
@@ -50,9 +58,8 @@ Supported languages out of the box:
    cd lib/plugins/
    git clone [https://github.com/your-username/dokuwiki-plugin-aibadge.git](https://github.com/your-username/dokuwiki-plugin-aibadge.git) aibadge
    ```
-Ensure the directory name under lib/plugins/ is strictly named aibadge.
-
-Clear your DokuWiki cache (e.g., by saving a wiki page or appending ?purge=true to a page URL).
+2. Ensure the directory name under lib/plugins/ is strictly named aibadge.
+3. Clear your DokuWiki cache (e.g., by saving a wiki page or appending ?purge=true to a page URL).
 
 ---
 
@@ -85,8 +92,10 @@ The plugin fully respects DokuWiki's alignment spacing (leading/trailing spaces 
     <ai>
     {{ :wiki:portrait.png?200 | AI Generated Portrait}}
     </ai>
-    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Text flows smoothly around the image while the badge remains pinned to the upper-left corner of the image itself.
    ```
+
+Text flows smoothly around the image while the badge remains pinned to the upper-left corner of the image itself.
+
 
 ---
 
@@ -102,46 +111,9 @@ CSS Layout Transfer: Using CSS :has() pseudo-classes, the wrapper inherits float
 
 ---
 
-## Directory Structure
-
-   ```bash
-aibadge/
-├── syntax.php
-├── style.css
-├── plugin.info.txt
-└── lang/
-    ├── bg/lang.php
-    ├── cs/lang.php
-    ├── da/lang.php
-    ├── de/lang.php
-    ├── de-informal/lang.php
-    ├── el/lang.php
-    ├── en/lang.php
-    ├── es/lang.php
-    ├── et/lang.php
-    ├── fi/lang.php
-    ├── fr/lang.php
-    ├── ga/lang.php
-    ├── hr/lang.php
-    ├── hu/lang.php
-    ├── it/lang.php
-    ├── lt/lang.php
-    ├── lv/lang.php
-    ├── mt/lang.php
-    ├── nl/lang.php
-    ├── pl/lang.php
-    ├── pt/lang.php
-    ├── ro/lang.php
-    ├── sk/lang.php
-    ├── sl/lang.php
-    └── sv/lang.php
-   ```
-
----
-
 ## Changelog
 
-See [CHANGELOG.md](CHANGELOG.md)
+See [changelog.md](changelog.md)
 
 ---
 
