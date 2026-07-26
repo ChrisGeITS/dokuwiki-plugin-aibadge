@@ -44,9 +44,9 @@ class syntax_plugin_aibadge extends DokuWiki_Syntax_Plugin {
 
         switch ($state) {
             case DOKU_LEXER_ENTER:
-                // Sprachprüfung: de / de-informel -> KI-generiert, sonst AI-generated
+                // Sprachprüfung: de / de-informal -> KI-generiert, sonst AI-generated
                 $currentLang = strtolower($conf['lang'] ?? 'en');
-                if (in_array($currentLang, array('de', 'de-informel'), true)) {
+                if (in_array($currentLang, array('de', 'de-informal'), true)) {
                     $badgeText = 'KI-generiert';
                 } else {
                     $badgeText = 'AI-generated';
