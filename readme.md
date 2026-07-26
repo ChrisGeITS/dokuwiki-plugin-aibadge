@@ -5,7 +5,7 @@ An extension for [DokuWiki](https://www.dokuwiki.org/) to label AI-generated or 
 This plugin helps wiki administrators and content creators clearly label AI-generated or synthetic media to support transparency requirements under **Article 50 of the EU AI Act (AI Regulation)**, which mandates that synthetic content, generated media, and deepfakes must be clearly recognizable as artificially created.
 
 Requires:
-- DokuWiki Release: Igor or newer
+- DokuWiki Release: testet on Mort
 - Modern browser with CSS :has() support
 
 ---
