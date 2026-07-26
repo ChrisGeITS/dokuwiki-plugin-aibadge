@@ -12,27 +12,26 @@ class syntax_plugin_aibadge extends DokuWiki_Syntax_Plugin {
     }
 
     public function connectTo($mode) {
-        // Greift sobald ?ai oder &ai irgendwo in der Bild-Syntax auftaucht
-        $this->Lexer->addSpecialPattern('\{\{[^\}]*?[\?\&]ai\b[^\}]*?\}\}', $mode, 'plugin_aibadge');
+        // Greift verlässlich, sobald irgendwo in {{ ... }} der String ai als Parameter vorkommt
+        $this->Lexer->addSpecialPattern('\{\{[^\}]*?\bai\b[^\}]*?\}\}', $mode, 'plugin_aibadge');
     }
 
     public function handle($match, $state, $pos, Doku_Handler $handler) {
-        // {{ und }} entfernen und Trimming
-        $content = trim(substr($match, 2, -2));
+        // Rohinhalt zwischen {{ und }}
+        $raw = substr($match, 2, -2);
 
-        // Spalte Titel/Alt-Text ab, falls vorhanden (|)
-        $parts = explode('|', $content, 2);
+        // Titel/Alt-Text abspalten, falls vorhanden (|)
+        $parts = explode('|', $raw, 2);
         $src = $parts[0];
-        $title = isset($parts[1]) ? $parts[1] : '';
+        $title = isset($parts[1]) ? $parts[1] : null;
 
-        // 1. Spezieller Fall: ?200&ai -> &ai sauber entfernen -> bleibt ?200
-        $cleanSrc = preg_replace('/&ai\b/', '', $src);
-
-        // 2. Fall: ?ai&200 -> ?ai& durch ? ersetzen -> bleibt ?200
-        $cleanSrc = preg_replace('/\?ai&/', '?', $cleanSrc);
-
-        // 3. Fall: Nur ?ai am Ende -> ?ai komplett entfernen
-        $cleanSrc = preg_replace('/\?ai\b/', '', $cleanSrc);
+        // Entferne das ai-Flag aus den Parametern:
+        // 1. &ai (z. B. ?200&ai)
+        // 2. ?ai& (z. B. ?ai&200 -> ?200)
+        // 3. ?ai (z. B. ?ai alleinstehend)
+        $cleanSrc = preg_replace('/&ai\b/i', '', $src);
+        $cleanSrc = preg_replace('/\?ai&/i', '?', $cleanSrc);
+        $cleanSrc = preg_replace('/\?ai\b/i', '', $cleanSrc);
 
         return array(
             'src'   => $cleanSrc,
@@ -45,7 +44,7 @@ class syntax_plugin_aibadge extends DokuWiki_Syntax_Plugin {
 
         global $conf;
 
-        // Sprachprüfung: de / de-informel -> "KI-generiert", sonst "AI-generated"
+        // Sprachauswahl: de / de-informel -> KI-generiert, sonst AI-generated
         $currentLang = strtolower($conf['lang'] ?? 'en');
         if (in_array($currentLang, array('de', 'de-informel'), true)) {
             $badgeText = 'KI-generiert';
@@ -53,10 +52,10 @@ class syntax_plugin_aibadge extends DokuWiki_Syntax_Plugin {
             $badgeText = 'AI-generated';
         }
 
-        // Standard DokuWiki Media Rendering mit den verbliebenen Parametern (z.B. ?200)
+        // DokuWiki-Standard-Media-Renderer mit allen bereinigten Parametern (z.B. ?200) aufrufen
         $imageHtml = $renderer->_media($data['src'], $data['title']);
 
-        // Wrapper & Badge injizieren
+        // Wrapper und Badge ausgeben
         $renderer->doc .= '<div class="ai-image-wrapper">';
         $renderer->doc .= $imageHtml;
         $renderer->doc .= '<span class="ai-badge">' . hsc($badgeText) . '</span>';
