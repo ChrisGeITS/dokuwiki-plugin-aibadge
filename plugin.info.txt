@@ -1,6 +1,6 @@
 base   aibadge
 author Christoph Genenger
-email  christoph@genenger-it-service.de
+email  genenger.c@gmail.com
 date   2026-07-25
 name   AI Badge Plugin
 desc   Zeigt einen Hinweis im Sinne der Offenlegungspflicht nach Art. 50 Abs. 4 EU-KI-VO.
