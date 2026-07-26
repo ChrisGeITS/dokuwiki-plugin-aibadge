@@ -1,20 +1,46 @@
+/* Der Badge-Wrapper */
 .ai-image-wrapper {
     position: relative;
     display: inline-block;
     line-height: 0;
 }
 
-.ai-image-wrapper img {
-    display: block;
+/* 
+ * Reicht das Umfließen (float) und die Margins von DokuWiki-Bildern
+ * (medialeft, mediaright, mediacenter) an den Wrapper weiter
+ */
+.ai-image-wrapper:has(.medialeft),
+.ai-image-wrapper:has(.img_left) {
+    float: left;
+    margin: 0 1.5em 1em 0;
 }
 
+.ai-image-wrapper:has(.mediaright),
+.ai-image-wrapper:has(.img_right) {
+    float: right;
+    margin: 0 0 1em 1.5em;
+}
+
+.ai-image-wrapper:has(.mediacenter),
+.ai-image-wrapper:has(.img_center) {
+    display: block;
+    margin: 0 auto 1em auto;
+    text-align: center;
+}
+
+/* Verhindert doppelte Margins auf dem Bild selbst */
+.ai-image-wrapper img {
+    display: block;
+    margin: 0 !important;
+}
+
+/* Das KI-Badge */
 .ai-badge {
     position: absolute;
     top: 9px;
     left: 9px;
     background-color: rgba(0, 0, 0, 0.66);
     color: #ffffff;
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
     font-size: 11px;
     font-weight: 400;
     line-height: 1;
