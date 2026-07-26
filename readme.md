@@ -56,7 +56,7 @@ An example of this plugin in use can be found at:
 1. Download or clone this repository into your DokuWiki plugin directory:
    ```bash
    cd lib/plugins/
-   git clone [https://github.com/your-username/dokuwiki-plugin-aibadge.git](https://github.com/your-username/dokuwiki-plugin-aibadge.git) aibadge
+   git clone [https://github.com/ChrisGeITS/dokuwiki-plugin-aibadge.git](https://github.com/ChrisGeITS/dokuwiki-plugin-aibadge.git) aibadge
    ```
 2. Ensure the directory name under lib/plugins/ is strictly named aibadge.
 3. Clear your DokuWiki cache (e.g., by saving a wiki page or appending ?purge=true to a page URL).
