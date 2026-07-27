@@ -1,14 +1,10 @@
-/* Der Badge-Wrapper */
 .ai-image-wrapper {
     position: relative;
     display: inline-block;
     line-height: 0;
 }
 
-/* 
- * Reicht das Umfließen (float) und die Margins von DokuWiki-Bildern
- * (medialeft, mediaright, mediacenter) an den Wrapper weiter
- */
+/* Layout-Anpassungen für DokuWiki Alignment */
 .ai-image-wrapper:has(.medialeft),
 .ai-image-wrapper:has(.img_left) {
     float: left;
@@ -28,19 +24,14 @@
     text-align: center;
 }
 
-/* Verhindert doppelte Margins auf dem Bild selbst */
 .ai-image-wrapper img {
     display: block;
     margin: 0 !important;
 }
 
-/* Das KI-Badge */
+/* Das KI-Badge (Basis) */
 .ai-badge {
     position: absolute;
-    top: 9px;
-    left: 9px;
-    background-color: rgba(0, 0, 0, 0.66);
-    color: #ffffff;
     font-size: 11px;
     font-weight: 400;
     line-height: 1;
@@ -49,4 +40,25 @@
     pointer-events: none;
     z-index: 10;
     letter-spacing: 0.3px;
+}
+
+/* Positionsklassen */
+.ai-badge.ai-pos-top-left {
+    top: 9px;
+    left: 9px;
+}
+
+.ai-badge.ai-pos-top-right {
+    top: 9px;
+    right: 9px;
+}
+
+.ai-badge.ai-pos-bottom-left {
+    bottom: 9px;
+    left: 9px;
+}
+
+.ai-badge.ai-pos-bottom-right {
+    bottom: 9px;
+    right: 9px;
 }
