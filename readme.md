@@ -29,7 +29,7 @@ Supported languages out of the box:
 
 ---
 
-## Screenshots
+## Screenshot
 
 <img src="screenshots/example.png" alt="AI Badge Example" width="300">
 
