@@ -46,7 +46,7 @@ An example of this plugin in use can be found at:
 ## Installation via Extension Manager
 
 1. Open the DokuWiki Extension Manager.
-2. Search for "AI Badge".
+2. Search for "aibadge".
 3. Install and enable the plugin.
 
 ---
