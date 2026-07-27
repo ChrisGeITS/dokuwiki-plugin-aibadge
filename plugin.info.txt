@@ -1,8 +1,7 @@
 base      aibadge
 author    Christoph Genenger
 email     genenger.c@gmail.com
-date      2026-07-25
 name      AI Badge Plugin
 desc      Adds visual badges to AI-generated images.
-url       https://github.com/ChrisGeITS/dokuwiki-plugin-aibadge
+url       https://www.dokuwiki.org/plugin:aibadge
 license   GPL-2.0
