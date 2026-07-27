@@ -113,6 +113,15 @@ CSS Layout Transfer: Using CSS :has() pseudo-classes, the wrapper inherits float
 
 ---
 
+## Support
+
+If this Software is useful to you and you would like to support its development, you can buy me a coffee via PayPal:
+
+
+https://paypal.me/ChristophGenenger
+
+---
+
 ## Changelog
 
 See [changelog.md](changelog.md)
