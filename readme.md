@@ -13,16 +13,18 @@ Requires:
 ## Features
 
 * **Supports EU AI Act Transparency Requirements:** Easily mark synthetic images to fulfill transparency standards.
+* **Full Configuration Manager Support:** Customize badge placement, background color, text color, opacity, and custom text overrides via DokuWiki's native Admin settings panel.
+* **Flexible Badge Positioning:** Place the badge in any corner of your images (*Top Left*, *Top Right*, *Bottom Left*, *Bottom Right*).
 * **Non-destructive Syntax:** Wraps standard DokuWiki media syntax without altering core media rendering, image paths, alignments, or scaling options.
 * **Full Text Flow & Layout Support:** Preserves text wrapping (`float: left` / `float: right`) and center alignment configured via DokuWiki's standard syntax.
-* **Multi-language Support:** Automatically displays the badge in the configured wiki language, with native translations for **24 EU official languages plus German informal (de-informal)** and automatic fallback to English.
-* **Lightweight CSS Styling:** Clean, modern overlay designed with subtle transparency, taking on the typography of your active DokuWiki template.
+* **Multi-language Support:** Automatically displays the badge in the configured wiki language, with native translations for **24 EU official languages plus German informal (de-informal)** and automatic fallback to English. Includes translated settings descriptions for the Admin panel.
+* **Lightweight CSS Styling:** Clean, modern overlay designed with customizable transparency, automatically adopting the typography of your active DokuWiki template.
 
 ---
 
 ## Multilingual Support
 
-The plugin automatically detects your DokuWiki language setting (`$conf['lang']`) and displays the localized badge text.
+The plugin automatically detects your DokuWiki language setting (`$conf['lang']`) and displays the localized badge text on pages, as well as translated setting labels in the Configuration Manager.
 
 Supported languages out of the box:
 `bg`, `cs`, `da`, `de`, `de-informal`, `el`, `en`, `es`, `et`, `fi`, `fr`, `ga`, `hr`, `hu`, `it`, `lt`, `lv`, `mt`, `nl`, `pl`, `pt`, `ro`, `sk`, `sl`, `sv`.
